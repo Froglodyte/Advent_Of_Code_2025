@@ -1,16 +1,16 @@
 let ranges = (await Bun.file("src/day05/ranges.txt").text())
-              .split("\n").map(line => line.split("-").map(Number));
-let ids = (await Bun.file("src/day05/ids.txt").text()).split("\n").map(Number);
+              .split("\n").map(line => line.split("-").map(Number))
+let ids = (await Bun.file("src/day05/ids.txt").text()).split("\n").map(Number)
 
-let mergedRanges: [number, number][] = [];
-ranges.sort((a, b) => a[0] - b[0]);
+let mergedRanges: [number, number][] = []
+ranges.sort((a, b) => a[0] - b[0])
 
 for (let [start, end] of ranges) {
-    let len = mergedRanges.length;
+    let len = mergedRanges.length
     if (len == 0 || mergedRanges[len - 1][1] < start) {
-        mergedRanges.push([start, end]);
+        mergedRanges.push([start, end])
     } else {
-        mergedRanges[len - 1][1] = Math.max(mergedRanges[len - 1][1], end);
+        mergedRanges[len - 1][1] = Math.max(mergedRanges[len - 1][1], end)
     }
 }
 
@@ -18,10 +18,10 @@ let count = 0;
 for (let id of ids) {
     for (let [start, end] of mergedRanges) {
         if (id >= start && id <= end) {
-            count++;
-            break;
+            count++
+            break
         }
     }
 }
 
-console.log(count);
+console.log(count)

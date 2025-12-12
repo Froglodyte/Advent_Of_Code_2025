@@ -5,7 +5,7 @@ let mergedRanges: [number, number][] = []
 ranges.sort((a, b) => a[0] - b[0])
 
 for (let [start, end] of ranges) {
-    let len = mergedRanges.length;
+    let len = mergedRanges.length
     if (len == 0 || mergedRanges[len - 1][1] < start) {
         mergedRanges.push([start, end])
     } else {
