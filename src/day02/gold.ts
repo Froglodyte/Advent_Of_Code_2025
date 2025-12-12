@@ -3,7 +3,7 @@ const input = (await Bun.file("src/day02/input.txt").text())
 let sum = 0
 
 for (let rng of input) {
-  for (let i = rng[0]!; i <= rng[1]!; i++) {
+  for (let i = rng[0]; i <= rng[1]; i++) {
     let n = i.toString()
     let len = n.length
     

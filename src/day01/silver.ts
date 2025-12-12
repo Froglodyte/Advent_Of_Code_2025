@@ -13,4 +13,4 @@ for (let turn of input) {
   if (pos === 0) pswd++
 }
 
-console.log(pswd);
+console.log(pswd)
